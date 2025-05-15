@@ -202,7 +202,7 @@ const VideoChat: React.FC<VideoChatProps> = ({
     
     // Use the current hostname instead of hardcoding 'localhost'
     // This allows the app to work on any device on the local network
-    const wsUrl = `ws://${window.location.hostname}:5000`;
+    const wsUrl = `ws://${process.env.NEXT_PUBLIC_SIGNALING_SERVER}:5000`;
     console.log('Connecting to WebSocket server at:', wsUrl);
     wsRef.current = new WebSocket(wsUrl);
     

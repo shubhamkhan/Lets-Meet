@@ -12,7 +12,8 @@ const wss = new WebSocket.Server({
 });
 
 // Listen on all network interfaces (0.0.0.0) instead of just localhost
-server.listen(5000, '0.0.0.0', () => {
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, '0.0.0.0', () => {
   console.log('Signaling server running on ws://0.0.0.0:5000');
   console.log('Access from other devices using your local IP address');
 });
